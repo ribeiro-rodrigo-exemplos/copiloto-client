@@ -3,18 +3,18 @@ package br.com.m2msolutions.copiloto.client.dsl.builder;
 import br.com.m2msolutions.copiloto.client.CopilotoException;
 import br.com.m2msolutions.copiloto.client.builder.CopilotoConfig;
 import br.com.m2msolutions.copiloto.grpc.CopilotoGrpc;
-import br.com.m2msolutions.copiloto.grpc.CopilotoRequest;
-import br.com.m2msolutions.copiloto.grpc.CopilotoResponse;
+import br.com.m2msolutions.copiloto.grpc.RegulagemRequest;
+import br.com.m2msolutions.copiloto.grpc.RegulagemResponse;
 import io.grpc.ManagedChannel;
 import io.grpc.ManagedChannelBuilder;
 import io.grpc.StatusRuntimeException;
 
 public class RequestBuilder {
 
-    private CopilotoRequest.Builder requestBuilder;
+    private RegulagemRequest.Builder requestBuilder;
     private CopilotoConfig config;
 
-    public RequestBuilder(CopilotoRequest.Builder builder,CopilotoConfig config){
+    public RequestBuilder(RegulagemRequest.Builder builder,CopilotoConfig config){
         this.requestBuilder = builder;
         this.config = config;
     }
@@ -24,17 +24,15 @@ public class RequestBuilder {
         try{
 
             CopilotoGrpc.CopilotoBlockingStub blockingStub = criarStub();
-            CopilotoResponse response = blockingStub.regular(requestBuilder.build());
+            RegulagemResponse response = blockingStub.regular(requestBuilder.build());
 
-            if(response!=null)
-                return response.getMinutosAdiantado();
-            else
-                return null;
+            Boolean calculoRealizado = response.getCopilotoHabilitado() && response.getResult().getRegulagemRealizada();
+
+            return calculoRealizado ? response.getResult().getMinutosAdiantado() : null;
         }
         catch (StatusRuntimeException e){
             throw new CopilotoException(e.getStatus().getCode().name());
         }
-
     }
 
     private CopilotoGrpc.CopilotoBlockingStub criarStub(){

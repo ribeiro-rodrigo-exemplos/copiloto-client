@@ -4,17 +4,17 @@ import br.com.m2msolutions.copiloto.client.Copiloto;
 import br.com.m2msolutions.copiloto.client.builder.CopilotoConfig;
 import br.com.m2msolutions.copiloto.client.dsl.builder.RequestBuilder;
 import br.com.m2msolutions.copiloto.client.dsl.builder.VeiculoBuilder;
-import br.com.m2msolutions.copiloto.grpc.CopilotoRequest;
+import br.com.m2msolutions.copiloto.grpc.RegulagemRequest;
 
 public class CopilotoDSL implements Copiloto {
 
-    private CopilotoRequest.Builder request;
+    private RegulagemRequest.Builder request;
     private VeiculoBuilder veiculoBuilder;
     private CopilotoConfig config;
 
     public CopilotoDSL(CopilotoConfig config){
         this.config = config;
-        request = CopilotoRequest.newBuilder();
+        request = RegulagemRequest.newBuilder();
         veiculoBuilder = new VeiculoBuilder(this);
     }
 
@@ -32,7 +32,7 @@ public class CopilotoDSL implements Copiloto {
         return this;
     }
 
-    public CopilotoRequest.Builder getRequest(){
+    public RegulagemRequest.Builder getRequest(){
         return request;
     }
 }
