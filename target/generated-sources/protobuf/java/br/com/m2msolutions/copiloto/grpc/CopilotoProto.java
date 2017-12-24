@@ -45,12 +45,13 @@ public final class CopilotoProto {
       "(\t\022\033\n\023dataHoraTransmissao\030\010 \001(\003\022\033\n\023perce" +
       "ntualConclusao\030\t \001(\002\"Q\n\021RegulagemRespons" +
       "e\022 \n\006result\030\001 \001(\0132\020.RegulagemResult\022\032\n\022c" +
-      "opilotoHabilitado\030\002 \001(\010\"G\n\017RegulagemResu" +
-      "lt\022\030\n\020minutosAdiantado\030\001 \001(\005\022\032\n\022regulage" +
-      "mRealizada\030\002 \001(\0102>\n\010Copiloto\0222\n\007Regular\022",
-      "\021.RegulagemRequest\032\022.RegulagemResponse\"\000" +
-      "B4\n!br.com.m2msolutions.copiloto.grpcB\rC" +
-      "opilotoProtoP\001b\006proto3"
+      "opilotoHabilitado\030\002 \001(\010\"_\n\017RegulagemResu" +
+      "lt\022\025\n\rtempoRegulado\030\001 \001(\001\022\031\n\021dataHoraReg" +
+      "ulagem\030\002 \001(\003\022\032\n\022regulagemRealizada\030\003 \001(\010",
+      "2?\n\tRegulacao\0222\n\007Regular\022\021.RegulagemRequ" +
+      "est\032\022.RegulagemResponse\"\000B4\n!br.com.m2ms" +
+      "olutions.copiloto.grpcB\rCopilotoProtoP\001b" +
+      "\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -81,7 +82,7 @@ public final class CopilotoProto {
     internal_static_RegulagemResult_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_RegulagemResult_descriptor,
-        new java.lang.String[] { "MinutosAdiantado", "RegulagemRealizada", });
+        new java.lang.String[] { "TempoRegulado", "DataHoraRegulagem", "RegulagemRealizada", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)

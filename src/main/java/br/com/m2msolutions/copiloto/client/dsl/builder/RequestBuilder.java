@@ -2,7 +2,7 @@ package br.com.m2msolutions.copiloto.client.dsl.builder;
 
 import br.com.m2msolutions.copiloto.client.CopilotoException;
 import br.com.m2msolutions.copiloto.client.builder.CopilotoConfig;
-import br.com.m2msolutions.copiloto.grpc.CopilotoGrpc;
+import br.com.m2msolutions.copiloto.grpc.RegulacaoGrpc;
 import br.com.m2msolutions.copiloto.grpc.RegulagemRequest;
 import br.com.m2msolutions.copiloto.grpc.RegulagemResponse;
 import io.grpc.ManagedChannel;
@@ -19,24 +19,24 @@ public class RequestBuilder {
         this.config = config;
     }
 
-    public Integer minutosDeAtrasoOuAdiantamento(){
+    public Double regulagem(){
 
         try{
 
-            CopilotoGrpc.CopilotoBlockingStub blockingStub = criarStub();
+            RegulacaoGrpc.RegulacaoBlockingStub blockingStub = criarStub();
             RegulagemResponse response = blockingStub.regular(requestBuilder.build());
 
             Boolean calculoRealizado = response.getCopilotoHabilitado() && response.getResult().getRegulagemRealizada();
 
-            return calculoRealizado ? response.getResult().getMinutosAdiantado() : null;
+            return calculoRealizado ? response.getResult().getTempoRegulado() : null;
         }
         catch (StatusRuntimeException e){
             throw new CopilotoException(e.getStatus().getCode().name());
         }
     }
 
-    private CopilotoGrpc.CopilotoBlockingStub criarStub(){
-        return CopilotoGrpc.newBlockingStub(criarCanalDeComunicacao());
+    private RegulacaoGrpc.RegulacaoBlockingStub criarStub(){
+        return RegulacaoGrpc.newBlockingStub(criarCanalDeComunicacao());
     }
 
     private ManagedChannel criarCanalDeComunicacao(){
