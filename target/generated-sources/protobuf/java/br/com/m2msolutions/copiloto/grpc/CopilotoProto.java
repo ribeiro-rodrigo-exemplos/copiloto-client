@@ -38,20 +38,20 @@ public final class CopilotoProto {
       descriptor;
   static {
     java.lang.String[] descriptorData = {
-      "\n\016copiloto.proto\"\333\001\n\020RegulagemRequest\022\021\n" +
-      "\tidCliente\030\001 \001(\005\022\021\n\tidVeiculo\030\002 \001(\005\022\020\n\010i" +
-      "dViagem\030\003 \001(\t\022\017\n\007idLinha\030\004 \001(\t\022\021\n\tidTraj" +
-      "eto\030\005 \001(\t\022\024\n\014modeloModulo\030\006 \001(\t\022\033\n\023ident" +
-      "ificadorModulo\030\007 \001(\t\022\033\n\023dataHoraTransmis" +
-      "sao\030\010 \001(\003\022\033\n\023percentualConclusao\030\t \001(\002\"Q" +
-      "\n\021RegulagemResponse\022 \n\006result\030\001 \001(\0132\020.Re" +
-      "gulagemResult\022\032\n\022copilotoHabilitado\030\002 \001(" +
-      "\010\"_\n\017RegulagemResult\022\025\n\rtempoRegulado\030\001 " +
-      "\001(\001\022\031\n\021dataHoraRegulagem\030\002 \001(\003\022\032\n\022regula",
-      "gemRealizada\030\003 \001(\0102?\n\tRegulacao\0222\n\007Regul" +
-      "ar\022\021.RegulagemRequest\032\022.RegulagemRespons" +
-      "e\"\000B4\n!br.com.m2msolutions.copiloto.grpc" +
-      "B\rCopilotoProtoP\001b\006proto3"
+      "\n\016copiloto.proto\"\311\001\n\020RegulagemRequest\022\021\n" +
+      "\tidCliente\030\001 \001(\005\022\021\n\tidVeiculo\030\002 \001(\005\022\017\n\007i" +
+      "dLinha\030\003 \001(\t\022\021\n\tidTrajeto\030\004 \001(\t\022\024\n\014model" +
+      "oModulo\030\006 \001(\t\022\033\n\023identificadorModulo\030\007 \001" +
+      "(\t\022\033\n\023dataHoraTransmissao\030\010 \001(\003\022\033\n\023perce" +
+      "ntualConclusao\030\t \001(\002\"Q\n\021RegulagemRespons" +
+      "e\022 \n\006result\030\001 \001(\0132\020.RegulagemResult\022\032\n\022c" +
+      "opilotoHabilitado\030\002 \001(\010\"_\n\017RegulagemResu" +
+      "lt\022\025\n\rtempoRegulado\030\001 \001(\001\022\031\n\021dataHoraReg" +
+      "ulagem\030\002 \001(\003\022\032\n\022regulagemRealizada\030\003 \001(\010",
+      "2?\n\tRegulacao\0222\n\007Regular\022\021.RegulagemRequ" +
+      "est\032\022.RegulagemResponse\"\000B4\n!br.com.m2ms" +
+      "olutions.copiloto.grpcB\rCopilotoProtoP\001b" +
+      "\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -70,7 +70,7 @@ public final class CopilotoProto {
     internal_static_RegulagemRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_RegulagemRequest_descriptor,
-        new java.lang.String[] { "IdCliente", "IdVeiculo", "IdViagem", "IdLinha", "IdTrajeto", "ModeloModulo", "IdentificadorModulo", "DataHoraTransmissao", "PercentualConclusao", });
+        new java.lang.String[] { "IdCliente", "IdVeiculo", "IdLinha", "IdTrajeto", "ModeloModulo", "IdentificadorModulo", "DataHoraTransmissao", "PercentualConclusao", });
     internal_static_RegulagemResponse_descriptor =
       getDescriptor().getMessageTypes().get(1);
     internal_static_RegulagemResponse_fieldAccessorTable = new
