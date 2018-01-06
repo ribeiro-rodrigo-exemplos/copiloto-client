@@ -2,8 +2,10 @@ package br.com.m2msolutions.copiloto.client.dsl;
 
 import br.com.m2msolutions.copiloto.client.Copiloto;
 import br.com.m2msolutions.copiloto.client.builder.CopilotoConfig;
+import br.com.m2msolutions.copiloto.client.dsl.builder.NotificacaoBuilder;
 import br.com.m2msolutions.copiloto.client.dsl.builder.RequestBuilder;
 import br.com.m2msolutions.copiloto.client.dsl.builder.VeiculoBuilder;
+import br.com.m2msolutions.copiloto.grpc.NotificacaoRequest;
 import br.com.m2msolutions.copiloto.grpc.RegulagemRequest;
 
 public class CopilotoDSL implements Copiloto {
@@ -34,5 +36,18 @@ public class CopilotoDSL implements Copiloto {
 
     public RegulagemRequest.Builder getRequest(){
         return request;
+    }
+
+    public Boolean notificar(Integer idCliente, Integer idVeiculo, String idLinha, String idTrajeto,
+                             Long tempoRegulado) {
+
+        NotificacaoRequest.Builder builder = NotificacaoRequest.newBuilder();
+        builder.setIdCliente(idCliente);
+        builder.setIdVeiculo(idVeiculo);
+        builder.setIdLinha(idLinha);
+        builder.setIdTrajeto(idTrajeto);
+        builder.setTempoRegulado(tempoRegulado);
+
+        return new NotificacaoBuilder(builder,config).notificar();
     }
 }
