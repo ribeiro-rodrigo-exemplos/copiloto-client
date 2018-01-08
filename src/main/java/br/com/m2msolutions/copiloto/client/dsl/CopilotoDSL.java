@@ -39,7 +39,7 @@ public class CopilotoDSL implements Copiloto {
     }
 
     public Boolean notificar(Integer idCliente, Integer idVeiculo, String idLinha, String idTrajeto,
-                             Long tempoRegulado) {
+                             Long tempoRegulado,Long distribuicao) {
 
         NotificacaoRequest.Builder builder = NotificacaoRequest.newBuilder();
         builder.setIdCliente(idCliente);
@@ -47,6 +47,7 @@ public class CopilotoDSL implements Copiloto {
         builder.setIdLinha(idLinha);
         builder.setIdTrajeto(idTrajeto);
         builder.setTempoRegulado(tempoRegulado);
+        builder.setDistribuicao(distribuicao);
 
         return new NotificacaoBuilder(builder,config).notificar();
     }

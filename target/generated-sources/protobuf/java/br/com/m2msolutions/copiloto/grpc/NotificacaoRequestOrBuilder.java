@@ -41,4 +41,9 @@ public interface NotificacaoRequestOrBuilder extends
    * <code>int64 tempoRegulado = 5;</code>
    */
   long getTempoRegulado();
+
+  /**
+   * <code>int64 distribuicao = 6;</code>
+   */
+  long getDistribuicao();
 }

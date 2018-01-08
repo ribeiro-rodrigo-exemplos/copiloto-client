@@ -18,6 +18,7 @@ message NotificacaoRequest{
     string idLinha = 3;
     string idTrajeto = 4;
     int64 tempoRegulado = 5;
+    int64 distribuicao = 6;
 }
 
 message NotificacaoResponse{

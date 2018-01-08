@@ -21,6 +21,7 @@ private static final long serialVersionUID = 0L;
     idLinha_ = "";
     idTrajeto_ = "";
     tempoRegulado_ = 0L;
+    distribuicao_ = 0L;
   }
 
   @java.lang.Override
@@ -76,6 +77,11 @@ private static final long serialVersionUID = 0L;
           case 40: {
 
             tempoRegulado_ = input.readInt64();
+            break;
+          }
+          case 48: {
+
+            distribuicao_ = input.readInt64();
             break;
           }
         }
@@ -197,6 +203,15 @@ private static final long serialVersionUID = 0L;
     return tempoRegulado_;
   }
 
+  public static final int DISTRIBUICAO_FIELD_NUMBER = 6;
+  private long distribuicao_;
+  /**
+   * <code>int64 distribuicao = 6;</code>
+   */
+  public long getDistribuicao() {
+    return distribuicao_;
+  }
+
   private byte memoizedIsInitialized = -1;
   public final boolean isInitialized() {
     byte isInitialized = memoizedIsInitialized;
@@ -224,6 +239,9 @@ private static final long serialVersionUID = 0L;
     if (tempoRegulado_ != 0L) {
       output.writeInt64(5, tempoRegulado_);
     }
+    if (distribuicao_ != 0L) {
+      output.writeInt64(6, distribuicao_);
+    }
     unknownFields.writeTo(output);
   }
 
@@ -249,6 +267,10 @@ private static final long serialVersionUID = 0L;
     if (tempoRegulado_ != 0L) {
       size += com.google.protobuf.CodedOutputStream
         .computeInt64Size(5, tempoRegulado_);
+    }
+    if (distribuicao_ != 0L) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeInt64Size(6, distribuicao_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -276,6 +298,8 @@ private static final long serialVersionUID = 0L;
         .equals(other.getIdTrajeto());
     result = result && (getTempoRegulado()
         == other.getTempoRegulado());
+    result = result && (getDistribuicao()
+        == other.getDistribuicao());
     result = result && unknownFields.equals(other.unknownFields);
     return result;
   }
@@ -298,6 +322,9 @@ private static final long serialVersionUID = 0L;
     hash = (37 * hash) + TEMPOREGULADO_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
         getTempoRegulado());
+    hash = (37 * hash) + DISTRIBUICAO_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+        getDistribuicao());
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -437,6 +464,8 @@ private static final long serialVersionUID = 0L;
 
       tempoRegulado_ = 0L;
 
+      distribuicao_ = 0L;
+
       return this;
     }
 
@@ -464,6 +493,7 @@ private static final long serialVersionUID = 0L;
       result.idLinha_ = idLinha_;
       result.idTrajeto_ = idTrajeto_;
       result.tempoRegulado_ = tempoRegulado_;
+      result.distribuicao_ = distribuicao_;
       onBuilt();
       return result;
     }
@@ -521,6 +551,9 @@ private static final long serialVersionUID = 0L;
       }
       if (other.getTempoRegulado() != 0L) {
         setTempoRegulado(other.getTempoRegulado());
+      }
+      if (other.getDistribuicao() != 0L) {
+        setDistribuicao(other.getDistribuicao());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -761,6 +794,32 @@ private static final long serialVersionUID = 0L;
     public Builder clearTempoRegulado() {
       
       tempoRegulado_ = 0L;
+      onChanged();
+      return this;
+    }
+
+    private long distribuicao_ ;
+    /**
+     * <code>int64 distribuicao = 6;</code>
+     */
+    public long getDistribuicao() {
+      return distribuicao_;
+    }
+    /**
+     * <code>int64 distribuicao = 6;</code>
+     */
+    public Builder setDistribuicao(long value) {
+      
+      distribuicao_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>int64 distribuicao = 6;</code>
+     */
+    public Builder clearDistribuicao() {
+      
+      distribuicao_ = 0L;
       onChanged();
       return this;
     }
