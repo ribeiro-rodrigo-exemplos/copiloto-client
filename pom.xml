@@ -25,6 +25,13 @@
             <version>1.7.0</version>
         </dependency>
     </dependencies>
+    <distributionManagement>
+        <snapshotRepository>
+            <id>snapshots</id>
+            <name>m2msolutions-snapshots</name>
+            <url>http://m2msolutions.jfrog.io/m2msolutions/libs-snapshot-local</url>
+        </snapshotRepository>
+    </distributionManagement>
     <build>
         <extensions>
             <extension>
